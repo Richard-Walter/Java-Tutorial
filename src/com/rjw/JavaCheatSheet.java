@@ -1,22 +1,15 @@
 package com.rjw;
 
 // Dialog used for user input
-import javax.swing.JOptionPane;
 
-// Public class other classes can access
-// Classes are blueprints for modeling real
-// world objects or systems
-// The code between { } belongs to the class
+import javax.swing.JOptionPane;
 
 /*
  * Multiline Comment
  */
 
 
-// Array functions
-// ArrayLists
-// Iterators
-// Used to get collection types (Lists)
+// Array functions, ArrayLists, Iterators, Lists
 import java.util.*;
 
 // Used to get user input
@@ -25,32 +18,24 @@ import java.util.stream.IntStream;
 
 public class JavaCheatSheet {
 
-    // A scanner object receives input and
-    // by using System.in you are reading
-    // from the keyboard
+    // A scanner object receives input by using System.in
     static Scanner sc = new Scanner(System.in);
 
-    // This is a constant thats value can't change
+    // This is a constant
     final double SHORTPI = 3.14159;
 
     // ---- ENUMERATED TYPES ----
     // Custom type with limited number of options
     // Must be declared at top of class
-    public enum Day {Monday,Tuesday,Wednesday};
+    public enum Day {Monday, Tuesday, Wednesday}
+
+    ;
 
     // ---- METHODS ----
-    // Methods avoid duplicate code and
-    // and help organize
-    // public methods : Executed by any program
-    // that knows of your class
-    // private methods : Available only to your class
-    // protected methods : Available to your class
-    // and subclasses (More Later)
 
     // Receive two ints and return an int
     // static means we don't have to create an
     // object to use this
-    // return type methodName(parameters w/ types)
     public static int getSum(int x, int y) {
         return x + y;
     }
@@ -61,9 +46,9 @@ public class JavaCheatSheet {
     }
 
     // Receive a variable number of parameters
-    public static int getSum2(int ... nums) {
+    public static int getSum2(int... nums) {
         int sum = 0;
-        for(int x: nums) {
+        for (int x : nums) {
             sum += x;
         }
         return sum;
@@ -78,7 +63,7 @@ public class JavaCheatSheet {
     }
 
     // Return a list of different types
-    static List<Object> getRandList(){
+    static List<Object> getRandList() {
         String name = "Derek";
         int age = 44;
         return Arrays.asList(name, age);
@@ -88,7 +73,7 @@ public class JavaCheatSheet {
     static int factorial(int num) {
         // Must have a condition were we don't
         // call for the function to execute
-        if(num == 1) {
+        if (num == 1) {
             return 1;
         } else {
             int result = num * factorial(num - 1);
@@ -98,7 +83,7 @@ public class JavaCheatSheet {
 
     static int getSum3(int[] nums) {
         int sum = 0;
-        for(int x: nums) sum += x;
+        for (int x : nums) sum += x;
         return sum;
     }
 
@@ -108,26 +93,15 @@ public class JavaCheatSheet {
 
     // ---- MAIN FUNCTION ----
 
-    // Code in main is where execution begins
-    // static means this is a class function
-    // versus an object function (More later)
+    // Code in main is where execution begins static means this is a class function
     // void states that this code does not return
-    // a value during execution
-    // Any data passed to your program from the
-    // terminal or command line is stored in args
+    // Any data passed to your program from the terminal or command line is stored in args
     public static void main(String[] args) {
 
-        // println is a method (function) that
-        // prints the provided string to the
-        // console
-        // All statements end with a ;
-        // Java is case sensitive
-        // print does the same without a newline
         System.out.println("Hello World");
 
         // ---- VARIABLES ----
-        // Must start with a letter and then
-        // letters, numbers, _ or $
+        // Must start with a letter and then letters, numbers, _ or $
 
         // Create a variable for holding whole numbers
         int var1 = 100;
@@ -136,14 +110,10 @@ public class JavaCheatSheet {
         int v2, v3;
 
         // ---- DATA TYPES ----
-        // Java requires every variable to have
-        // a defined data type
-        // Primitive Types
-        // byte, short, char, boolean, int, float,
-        // double, and long
+        // Java requires every variable to have a defined data type
+        // Primitive Types: byte, short, char, boolean, int, float,double, and long
 
-        // Wrapper classes make primitive types
-        // act like objects
+        // Wrapper classes make primitive types act like objects
         System.out.println("Byte Max: " +
                 Byte.MAX_VALUE);
         System.out.println("Byte Min: " +
@@ -153,9 +123,9 @@ public class JavaCheatSheet {
         System.out.println("Short Min: " +
                 Short.MIN_VALUE);
         System.out.println("Char Max: " +
-                (Character.MAX_VALUE+0));
+                (Character.MAX_VALUE + 0));
         System.out.println("Char Min: " +
-                (Character.MIN_VALUE+0));
+                (Character.MIN_VALUE + 0));
         System.out.println("Int Max: " +
                 Integer.MAX_VALUE);
         System.out.println("Int Min: " +
@@ -174,7 +144,6 @@ public class JavaCheatSheet {
                 Long.MIN_VALUE);
 
         // Booleans are either true or false
-        // You can't use 0 or anything else
         boolean happy = true;
 
         // Characters can only store single
@@ -223,71 +192,68 @@ public class JavaCheatSheet {
 
         // Convert Strings to primitives with
         // Byte.parseByte, Boolean.parseBoolean,
-        // and the same format for each type
-        // except for chars
+        // and the same format for each type except for chars
         int strInt = Integer.parseInt("10");
 
         // ---- MATH ----
-        System.out.println("5 + 4 = "+(5+4));
-        System.out.println("5 - 4 = "+(5-4));
-        System.out.println("5 * 4 = "+(5*4));
-        System.out.println("5 / 4 = "+(5/4));
-        System.out.println("5 % 4 = "+(5%4));
+        System.out.println("5 + 4 = " + (5 + 4));
+        System.out.println("5 - 4 = " + (5 - 4));
+        System.out.println("5 * 4 = " + (5 * 4));
+        System.out.println("5 / 4 = " + (5 / 4));
+        System.out.println("5 % 4 = " + (5 % 4));
 
-        // Math done on integers default to
-        // integer output and doubles return doubles
-        System.out.println("5 / 4 = "+(5.0/4.0));
+        // Math done on integers default to integer output and doubles return doubles
+        System.out.println("5 / 4 = " + (5.0 / 4.0));
 
         // incMe++ same as incMe = incMe + 1
         // Can also decrement with --
         int incMe = 0;
-        System.out.println("incMe: "+(incMe++));    //0
-        System.out.println("incMe: "+(++incMe));    //2
+        System.out.println("incMe: " + (incMe++));    //0
+        System.out.println("incMe: " + (++incMe));    //2
 
         // incMe = incMe + 10 == incMe += 10
         // Same with -= *= /= %=
         incMe += 10;
 
         // Numerous math functions
-        System.out.println("abs(-1) = "+Math.abs(-1));
-        System.out.println("ceil(4.25) = "+Math.ceil(4.25));
-        System.out.println("floor(4.25) = "+Math.floor(4.25));
-        System.out.println("round(4.25) = "+Math.round(4.25));
-        System.out.println("max(4,5) = "+Math.max(4,5));
-        System.out.println("min(4,5) = "+Math.min(4,5));
-        System.out.println("exp(1) = "+Math.exp(1));
-        System.out.println("log(1) = "+Math.log(1));
-        System.out.println("log10(1) = "+Math.log10(1));
-        System.out.println("pow(2,2) = "+Math.pow(2,2));
-        System.out.println("sqrt(4) = "+Math.sqrt(4));
-        System.out.println("cbrt(4) = "+Math.cbrt(4));
-        System.out.println("hypot(5,5) = "+Math.hypot(5,5));
-        System.out.println("PI = "+Math.PI);
+        System.out.println("abs(-1) = " + Math.abs(-1));
+        System.out.println("ceil(4.25) = " + Math.ceil(4.25));
+        System.out.println("floor(4.25) = " + Math.floor(4.25));
+        System.out.println("round(4.25) = " + Math.round(4.25));
+        System.out.println("max(4,5) = " + Math.max(4, 5));
+        System.out.println("min(4,5) = " + Math.min(4, 5));
+        System.out.println("exp(1) = " + Math.exp(1));
+        System.out.println("log(1) = " + Math.log(1));
+        System.out.println("log10(1) = " + Math.log10(1));
+        System.out.println("pow(2,2) = " + Math.pow(2, 2));
+        System.out.println("sqrt(4) = " + Math.sqrt(4));
+        System.out.println("cbrt(4) = " + Math.cbrt(4));
+        System.out.println("hypot(5,5) = " + Math.hypot(5, 5));
+        System.out.println("PI = " + Math.PI);
 
         // Trig Functions Radians
-        System.out.println("sin(1.5708) = "+Math.sin(1.5708));
-        System.out.println("cos(1.5708) = "+Math.cos(1.5708));
-        System.out.println("tan(1.5708) = "+Math.tan(1.5708));
-        System.out.println("asin(1.5708) = "+Math.asin(1.5708));
-        System.out.println("acos(1.5708) = "+Math.acos(1.5708));
-        System.out.println("atan(1.5708) = "+Math.atan(1.5708));
-        System.out.println("sinh(1.5708) = "+Math.sinh(1.5708));
-        System.out.println("cosh(1.5708) = "+Math.cosh(1.5708));
-        System.out.println("tanh(1.5708) = "+Math.tanh(1.5708));
-        System.out.println("toDegrees(1.5708) = "+Math.toDegrees(1.5708));
-        System.out.println("toRadians(90) = "+Math.toRadians(90));
+        System.out.println("sin(1.5708) = " + Math.sin(1.5708));
+        System.out.println("cos(1.5708) = " + Math.cos(1.5708));
+        System.out.println("tan(1.5708) = " + Math.tan(1.5708));
+        System.out.println("asin(1.5708) = " + Math.asin(1.5708));
+        System.out.println("acos(1.5708) = " + Math.acos(1.5708));
+        System.out.println("atan(1.5708) = " + Math.atan(1.5708));
+        System.out.println("sinh(1.5708) = " + Math.sinh(1.5708));
+        System.out.println("cosh(1.5708) = " + Math.cosh(1.5708));
+        System.out.println("tanh(1.5708) = " + Math.tanh(1.5708));
+        System.out.println("toDegrees(1.5708) = " + Math.toDegrees(1.5708));
+        System.out.println("toRadians(90) = " + Math.toRadians(90));
 
         // Random number between 5 and 20
         int minNum = 5;
         int maxNum = 20;
-        int randNum = minNum + (int)(Math.random() *
+        int randNum = minNum + (int) (Math.random() *
                 ((maxNum - minNum) + 1));
-        System.out.println("Rand : "+randNum);
+        System.out.println("Rand : " + randNum);
 
         // ---- STRINGS ----
-        // Strings are objects (Reference Type)
-        // They have built in methods and must
-        // be surrounded with "
+        // Strings are objects (Reference Type) and are immutable
+        // They have built in methods and must be surrounded with "
         String name = "Derek";
 
         // Combine strings with +
@@ -295,8 +261,7 @@ public class JavaCheatSheet {
         String wName = name + " Banas";
         wName += " is my name";
 
-        // Conversion is automatic when using
-        // primitives
+        // Conversion is automatic when using primitives
         String drsDog = "K" + 9;
 
         // Get character at index
@@ -312,30 +277,28 @@ public class JavaCheatSheet {
         // Number of characters
         System.out.println(wName.length());
 
-        // Don't use == to compare strings use equals
-        // == would check if they point to the same
-        // memory location
+        // Don't use == to compare strings use equals() method
+        // == would check if they point to the same memory location
         // .equalsIgnoreCase ignores case
         String str1 = "dog";
         System.out.println("dog equals cat : " +
                 (str1.equals("cat")));
 
-        // Compare strings 0 if same, -1 if string
-        // comes before other or 1
+        // Compare strings: 0 if same, -1 if string comes before
+        // otherwise the index of the string 1 or greater
         // compareToIgnoreCase
         System.out.println(wName.compareTo("ABC"));
 
-        // Replace matches
-        // replaceFirst
+        // Replace matches: replace First
         System.out.println(wName.replace("Derek", "Bob"));
 
         // Get string at indexes
-        System.out.println(wName.substring(0,5));
+        System.out.println(wName.substring(0, 5));
 
         // Turn string into array
-        // Shortcut for printing array (Enhanced For)
-        // toCharArray
-        for(String x: wName.split(" ")) System.out.println(x);
+        // Shortcut for printing array (Enhanced For Loop - list comprehension)
+        for (String x : wName.split(" "))
+            System.out.println(x);
 
         // trim : Deletes whitespace at beginning and end
         // toUpperCase, toLowerCase
@@ -350,44 +313,34 @@ public class JavaCheatSheet {
 
         // Number of characters
         System.out.println(sb.length());
-
-        // Get size set aside
         // Increase size with ensureCapacity
         System.out.println(sb.capacity());
-
         // Append a primitive or string
         sb.append(" Yeah");
-
         // Insert at index
         System.out.println(sb.insert(6, "Big "));
-
         // Replace at indexes
         System.out.println(sb.replace(6, 9, "wig"));
-
         // Extract substring
-        System.out.println(sb.substring(6,10));
-
+        System.out.println(sb.substring(6, 10));
         // Delete characters at indexes
         System.out.println(sb.delete(6, 10));
-
         // Get char at index
         System.out.println(sb.charAt((4)));
-
         // Get index for string
         System.out.println(sb.indexOf("Yeah"));
 
-        // ---- ARRAYS ----
-        // Arrays are boxes in memory that hold
-        // multiple values
 
-        // Create an array that can hold 10 values
+        // ---- ARRAYS ----  These are immutable: use arraylist to add/remove
+        // Create an array that can hold 10 values: default 0
         int[] a1 = new int[10];
+        System.out.println(a1);
 
         // Assign a value to the first index (address)
         a1[0] = 1;
 
         // Fill array with a value
-        Arrays.fill(a1,2);
+        Arrays.fill(a1, 2);
 
         // Get value
         System.out.println(a1[0]);
@@ -396,49 +349,48 @@ public class JavaCheatSheet {
         System.out.println(a1.length);
 
         // Create and add values at the same time
-        String[] a2 = {"one","two"};
+        String[] a2 = {"one", "two"};
 
         // Generate an array from 1 to 10 (More Later)
         int[] oneTo10 = IntStream.rangeClosed(1, 10).toArray();
 
         // The enhanced for loop
-        for(int x: oneTo10) System.out.println(x);
+        for (int x : oneTo10) System.out.println(x);
 
-        // Find value
+        // Find value, returns index 8
         System.out.println(Arrays.binarySearch(oneTo10, 9));
 
         // Multidimensional array
         int a3[][] = new int[2][2];
 
         // Create and initialize
-        // a4[How many down][How many across]
+        // [How many down][How many across]
         String[][] a4 = {{"00", "10"},
                 {"01", "11"}};
 
         System.out.println(a4[1][1]);
 
         // a5[How many down][How many across][How many Groups]
-        // a5[3][4][1]
+        // e.g. a5[3][4][1]
         String a5[][][] = {{{"000"}, {"100"}, {"200"}, {"300"}},
                 {{"010"}, {"110"}, {"210"}, {"310"}},
                 {{"020"}, {"120"}, {"220"}, {"320"}}};
         System.out.println(a5[2][3][0]);
 
         // Copy array into another
-        int a6[] = {1,2,3};
-        int a7[] = Arrays.copyOf(a6, 3);
+        int a6[] = {1, 2, 3};
+        int a7[] = Arrays.copyOf(a6, 3);    //how many values
 
         // Compare arrays
         System.out.println(Arrays.equals(a6, a7));
 
         // Sort array
-        int a8[] = {3,2,1};
+        int a8[] = {3, 2, 1};
         Arrays.sort(a8);
         System.out.println(Arrays.toString(a8));
 
         // ---- ARRAYLIST ----
-        // ArrayLists resize and provide for easy
-        // insertion and deletion
+        // ArrayLists resize and provide for easy insertion and deletion
         // Create a String ArrayList with 20 spaces
         ArrayList<String> aL1 = new ArrayList<String>(20);
 
@@ -446,8 +398,8 @@ public class JavaCheatSheet {
         aL1.add("Sue");
 
         // Generate an ArrayList
-        ArrayList<Integer> aL2 = new ArrayList<>(Arrays.asList(1,2,3,4));
-        for(Integer x: aL2) System.out.println(x);
+        ArrayList<Integer> aL2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        for (Integer x : aL2) System.out.println(x);
 
         // Get a value
         System.out.println(aL2.get(1));
@@ -458,30 +410,29 @@ public class JavaCheatSheet {
         // Delete value (Delete all aL2.clear())
         aL2.remove(3);
 
-        // Iterators are used to cycles through
-        // collections like ArrayLists
+        // Iterators are used to cycles through collections like ArrayLists
         Iterator it = aL2.iterator();
 
         // Loop while more values exist
-        while(it.hasNext()) {
+        while (it.hasNext()) {
             // Output each value
             System.out.println(it.next());
         }
 
         // ---- LINKEDLIST ----
-        // Best when you have to make changes
-        // in the middle of the list
-        // Each link has a reference to the value
-        // before and the value after
+        // Best when you have to make changes in the middle of the list
+        // Each link has a reference to the value before and the value after
         LinkedList<Integer> lL1 = new LinkedList<Integer>();
 
         // Add value
-        lL1.add(1); lL1.add(2); lL1.add(3);
+        lL1.add(1);
+        lL1.add(2);
+        lL1.add(3);
 
         // Add array to list
-        lL1.addAll(Arrays.asList(1,2,3,4));
+        lL1.addAll(Arrays.asList(1, 2, 3, 4));
 
-        // Add to front (addLast Also)
+        // Add to front (addLast also)
         lL1.addFirst(0);
 
         // Check if in list
@@ -513,46 +464,44 @@ public class JavaCheatSheet {
         // nextLong, nextLine
         System.out.print("Enter name: ");
 
-        // Did the user enter a string
-        // Use hasNextDataType to check if a
-        // valid type was entered
-        if(sc.hasNextLine()){
-            String userName = sc.nextLine();
-            System.out.println("Hello "+userName);
-        }
+        // Did the user enter a string?
+        // Use hasNextDataType to check if a valid type was entered
+//        if (sc.hasNextLine()) {
+//            String userName = sc.nextLine();
+//            System.out.println("Hello " + userName);
+//        }
 
         // Get input using a dialog box
-        String jopName =
-                JOptionPane.showInputDialog("Enter Name");
-        System.out.println("Hello "+jopName);
+//        String jopName =
+//                JOptionPane.showInputDialog("Enter Name");
+//        System.out.println("Hello " + jopName);
 
         // ---- CONDITIONALS ----
         // Relational Operators : == != > < >= <=
         // Logical Operators : ! && ||
         int age = 12;
-        if ((age >= 5) && (age <= 6)){
+        if ((age >= 5) && (age <= 6)) {
             System.out.println("Go to Kindergarten");
-        } else if ((age >= 7) && (age <= 13)){
+        } else if ((age >= 7) && (age <= 13)) {
             System.out.println("Go to Middle School");
-        } else if ((age >= 14) && (age <= 18)){
+        } else if ((age >= 14) && (age <= 18)) {
             System.out.println("Go to High School");
         } else {
             System.out.println("Stay Home");
         }
 
-        System.out.println("true || false = "+(true || false));
-        System.out.println("!true = "+(!true));
+        System.out.println("true || false = " + (true || false));
+        System.out.println("!true = " + (!true));
 
-        // The ternary operator returns the 1st value
-        // when the condition is true and the 2nd
-        // otherwise
+        // The ternary operator returns the 1st value when the condition is true otherwise the 2nd
         boolean canVote = (age >= 18) ? true : false;
-        System.out.println("Can Vote : "+canVote);
+        System.out.println("Can Vote : " + canVote);
 
         // Switch is used when you have limited options
         String lang = "France";
-        switch(lang) {
-            case "Chile": case "Cuba":
+        switch (lang) {
+            case "Chile":
+            case "Cuba":
                 System.out.println("Hola");
 
                 // Without break the next condition
@@ -569,7 +518,7 @@ public class JavaCheatSheet {
         }
 
         // ---- LOOPING ----
-        for(int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++) {
             System.out.println(i);
         }
 
@@ -578,13 +527,13 @@ public class JavaCheatSheet {
         while (wI < 20) {
 
             // Only print even numbers
-            if(wI % 2 == 0) {
+            if (wI % 2 == 0) {
                 System.out.println(wI);
                 wI++;
                 // Jump back to the beginning of loop
                 continue;
             }
-            if(wI >= 10) {
+            if (wI >= 10) {
                 // Stop looping
                 break;
             }
@@ -594,49 +543,43 @@ public class JavaCheatSheet {
         // Do whiles execute at least once
         int secretNum = 7;
         int guess = 0;
-        do {
-            System.out.println("Guess : ");
-            if(sc.hasNextInt()){
-                guess = sc.nextInt();
-            }
-        }while(secretNum != guess);
-        System.out.println("You guessed it");
+//        do {
+//            System.out.println("Guess : ");
+//            if (sc.hasNextInt()) {
+//                guess = sc.nextInt();
+//            }
+//        } while (secretNum != guess);
+//        System.out.println("You guessed it");
 
         // ---- METHODS ----
-        System.out.println("5 + 4 = " + getSum(5,4));
+        System.out.println("5 + 4 = " + getSum(5, 4));
 
-        // All data passed to a function is pass by
-        // value so changes in the method have no
-        // effect outside of the function
+        // All data passed to a function is pass by value,
+        // so changes in the method have no effect outside of the function
         int cNum = 0;
         changeMe(cNum);
         System.out.println("cNum = " + cNum);
 
-        // You can pass a variable number of values
-        // to a method
-        System.out.println("1+2+3 = " + getSum2(1,2,3));
+        // You can pass a variable number of values to a method
+        System.out.println("1+2+3 = " + getSum2(1, 2, 3));
 
         // You can receive multiple values with an array
         int[] multVA = getNext2(5);
         // 1 line for loop
-        for(int x: multVA) System.out.println(x);
+        for (int x : multVA) System.out.println(x);
 
         // Receive multiple values of different types
         List<Object> randList = getRandList();
         System.out.println(randList);
 
-        // Demonstrate recursion (functions calling
-        // themselves)
+        // Demonstrate recursion (functions calling themselves)
         System.out.println("Fact 4 = " + factorial(4));
 
         // Pass array to method
-        int[] nums = {1,2,3};
+        int[] nums = {1, 2, 3};
         System.out.println("Sum = " + getSum3(nums));
 
         // ---- EXCEPTION HANDLING ----
-        // Used to catch errors that could crash
-        // our program
-
         // Surround problem code with a try block
         try {
             // int badInt = 10 / 0;
@@ -646,13 +589,13 @@ public class JavaCheatSheet {
             throw new Exception("Bad Stuff");
         }
         // Catch division by 0
-        catch(ArithmeticException ex) {
+        catch (ArithmeticException ex) {
             System.out.println("Can't divide by zero");
             System.out.println(ex.getMessage());
             System.out.println(ex.toString());
         }
         // Catch any exception
-        catch(Exception ex) {
+        catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
         // Executed whether exception occurred or not
@@ -663,7 +606,7 @@ public class JavaCheatSheet {
 
         // ---- ENUMERATED TYPES ----
         Day favDay = Day.Monday;
-        System.out.println("Fav day is "+favDay);
+        System.out.println("Fav day is " + favDay);
 
     }
 }
